@@ -1,0 +1,10 @@
+# project ignored paths
+vendor/
+docker-compose.override.yml
+
+# ide and os ignored paths
+.docker-sync/
+.idea/
+.vagrant/
+.DS_Store
+Thumbs.db

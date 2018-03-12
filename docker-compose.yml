@@ -1,0 +1,17 @@
+version: "2.1"
+
+services:
+  php:
+    image: denimsoft/php:7.2-zts-alpine
+    build:
+      context: docker
+    working_dir: /opt/project
+    ports:
+      - "127.0.0.1:${SSH_PORT:-2222}:22"
+    volumes:
+      - "$PWD:/opt/project"
+      - "$HOME/.ssh/id_rsa.pub:/home/$USER/.ssh/authorized_keys"
+      - ssh:/etc/ssh
+
+volumes:
+    ssh:
